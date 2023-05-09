@@ -1,0 +1,29 @@
+<h1>WHISPER AUDIO AND VIDEO TEXT CONVATER </h1>
+<form [formGroup]="myFormtralater" (ngSubmit)="submitdata()" #form>
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="danger">
+        <nb-card-body class="example-items-col">
+            <div>
+                <h6>SELECT MODEL</h6>
+                <nb-select selected="select" shape="round" formControlName="model">
+                    <nb-option value="">SELECT</nb-option>
+                    <nb-option value={{item.value}} *ngFor="let item of list">{{item.title}}</nb-option>
+                </nb-select><br><br>
+            </div>
+            <div>
+                <h6>SELECT LANGUAGE</h6>
+                <nb-select selected="select" shape="round" formControlName="language">
+                    <nb-option value="">SELECT</nb-option>
+                    <nb-option value={{item.value}} *ngFor="let item of langListNew">{{item.title}}</nb-option>
+                </nb-select><br><br>
+            </div>
+            <div>
+                <nb-checkbox formControlName="translationtype">Do You Want To Translate Your Audio Or Video(**Default It Transcripe)</nb-checkbox> <br><br>  
+            </div>
+            <div>
+                <input type="file" nbInput shape="round" id="file" (change)="onFileChange($event)"
+                    placeholder="Enter File Upload" formControlName="file"><br><br>
+            </div>
+            <button nbButton status="success" shape="round" type="submit">SUBMIT</button>
+        </nb-card-body>
+    </nb-card>
+</form>

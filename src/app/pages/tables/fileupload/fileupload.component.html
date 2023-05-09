@@ -1,0 +1,11 @@
+ <h1>BEACH TASKS UPLOAD </h1>
+<form [formGroup]="myForm" (ngSubmit)="submit()" #form>
+<nb-card>
+    <nb-card-body class="example-items-col" >
+        <input type="file" nbInput shape="round" id="file" accept=".csv"
+         placeholder="Enter File Upload" (change)="onFileChange($event)" formControlName="file" >
+      <button nbButton status="success" shape="round" type="submit">SUBMIT</button>
+    </nb-card-body>
+  </nb-card>
+</form> 
+       
